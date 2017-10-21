@@ -156,10 +156,132 @@ Giới hạn thông tin đầu ra
 | `--committer`		  |	Chỉ hiện thị các commit mà tên người commit thoả mãn điều kiện nhất định |
 
 
+## Undo 
+
+Thay đổi commit cuối cùng, lệnh này sẽ thực hiện commit một sự sửa đổi và chỉ tính như 1 commit 
+
+```
+$ git commit --amend
+```
+
+Unstage một tập tin 
+
+```
+$ git reset HEAD <file>
+```
+
+Phục hồi tập tin đã thay đổi 
+
+```
+git checkout -- <file>
+```
+
+## Remote server
+
+Liệt kê ngắn gọn remote server 
+
+```
+$ git remote -v
+```
+
+Thêm các Remote Repositorie
+
+```
+$ git remote add [shortname] [url]
+```
+
+Lấy dữ liệu từ các Remote Repositorie
+
+```
+$ git fetch <remote>
+```
+
+Đẩy lên Remote của bạn
+
+```
+git push <remote> <branch>
+```
+
+Kiểm tra Remote
+
+```
+$ git remote show <remote>
+```
+
+Đổi tên Remote
+
+```
+$ git remote rename <old-remote> <new-remote>
+```
+
+Xóa Remote
+
+```
+$ git remote remove <remote>
+```
+
+## Tagging
+
+Liệt kê tag
+
+```
+$ git tag
+```
+
+Tạo Annotated Tags
+
+```
+$ git tag -a <tag> -m <message>
+```
+
+Xem thông tin tag 
+
+```
+$ git show <tag>
+```
+
+Tạo Signed Tags
+
+```
+$ git tag -s <tag> -m <message>
+```
+
+Tạo Lightweight Tags
+
+```
+$ git tag <tag>
+```
+
+Xác thực tag 
+
+```
+git tag -v <tag>
+```
+
+p/s: Lệnh sử dụng GPG để xác minh chữ ký, do vậy cần có public key của người ký  
 
 
+Tag commit trước đó
 
+Sử dụng `$ git log --pretty=oneline` để xác định commit checksum cần tagging
 
+```
+$ git tag -a <tag> <checksum or a part of checksum>
+```
+
+Sharing tag 
+
+```
+$ git push origin <tag>
+```
+
+Tips: `--tags` thay cho <tag> để push tất cả các tag
+
+Checking out Tags
+
+```
+$ git checkout <tag>
+```
 
 
 
