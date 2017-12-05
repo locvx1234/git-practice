@@ -9,4 +9,6 @@ def selection_sort(array):
 	
 if __name__ == "__name__":
 ##
-##	
+##
+
+###LONG
